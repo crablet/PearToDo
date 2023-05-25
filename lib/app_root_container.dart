@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pear_todo/business/i18n/main.i18n.dart';
+import 'package:pear_todo/business/i18n/app_root_container.i18n.dart';
 
 class AppRootContainer extends StatefulWidget {
   const AppRootContainer({Key? key}) : super(key: key);
