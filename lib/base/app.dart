@@ -72,4 +72,6 @@ class App {
       sp.setString("${spPrefix}languageCode", code);
 
   static Locale get locale => Locale(languageCode, countryCode);
+
+  static const String fileSuffix = ".pear";
 }
