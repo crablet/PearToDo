@@ -43,6 +43,7 @@ dependencies:
   i18n_extension: ^9.0.0
   shared_preferences: ^2.1.1
   json_annotation: ^4.8.1
+  get: ^5.0.0-release-candidate-4
 
 dev_dependencies:
   flutter_test:
