@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:get/get.dart';
+import 'package:pear_todo/business/settings/settings_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class App {
@@ -9,6 +11,7 @@ class App {
   /// 初始化全局变量，必须确保该函数在main中被调用
   static Future<void> init() async {
     sp = await SharedPreferences.getInstance();
+    Get.put(SettingsController());
   }
 
   static const List<Locale> supportedLocales = [
@@ -74,4 +77,9 @@ class App {
   static Locale get locale => Locale(languageCode, countryCode);
 
   static const String fileSuffix = ".pear";
+
+  static String? getString(String key) => sp.getString(key);
+
+  static Future<bool> setString(String key, String value) =>
+      sp.setString(key, value);
 }
