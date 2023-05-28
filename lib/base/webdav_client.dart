@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:pear_todo/base/app.dart';
 import 'package:pear_todo/base/network_file_interface.dart';
 import 'package:webdav_client/webdav_client.dart';
 
@@ -45,7 +46,7 @@ class WebDavClient implements NetworkFileInterface {
   @override
   Future<bool> deleteFiles() async {
     try {
-      await client.removeAll("");
+      await client.removeAll(App.rootDirectory);
 
       return true;
     } catch (e) {

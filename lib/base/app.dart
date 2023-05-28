@@ -8,6 +8,8 @@ class App {
   static late SharedPreferences sp;
   static const String spPrefix = "PEAR_TODO_";
 
+  static const String rootDirectory = "pear_todo";
+
   /// 初始化全局变量，必须确保该函数在main中被调用
   static Future<void> init() async {
     sp = await SharedPreferences.getInstance();
