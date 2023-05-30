@@ -6,12 +6,14 @@ part 'user_account.g.dart';
 @_UserAccountTypeConverter()
 class UserAccount {
   UserAccount({
+    required this.isSelected,
     required this.type,
     required this.userName,
     required this.password,
     this.webDavServerAddress,
   });
 
+  final bool isSelected;
   final UserAccountType type;
   final String userName;
   final String password;
