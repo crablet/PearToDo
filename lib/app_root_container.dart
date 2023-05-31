@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pear_todo/business/i18n/app_root_container.i18n.dart';
+import 'package:pear_todo/business/settings/settings_page.dart';
 
 class AppRootContainer extends StatefulWidget {
   const AppRootContainer({Key? key}) : super(key: key);
@@ -53,9 +54,7 @@ class _AppRootContainerState extends State<AppRootContainer> {
       Center(
         child: Text("Calendar"),
       ),
-      Center(
-        child: Text("Settings"),
-      ),
+      SettingsPage(),
     ];
 
     return mainAreaWidgets[_selectedIndex];

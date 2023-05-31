@@ -11,9 +11,104 @@ class SettingsPage extends GetView<SettingsController> {
       appBar: AppBar(
         title: const Text("Settings"),
       ),
-      body: const Column(
-        children: [],
+      body: Column(
+        children: [
+          _buildSettingsGroup(
+            children: [
+              _buildTabBarSettingsItem(),
+            ],
+          ),
+          _buildSettingsGroup(
+            children: [
+              _buildAppearanceSettingsItem(),
+              _buildDateAndTimeSettingsItem(),
+              _buildSoundsAndNotificationsSettingsItem(),
+              _buildWidgetsSettingsItem(),
+              _buildGeneralSettingsItem(),
+            ],
+          ),
+          _buildSettingsGroup(
+            children: [
+              _buildHelpAndFeedbackSettingsItem(),
+              _buildAboutSettingsItem(),
+            ],
+          ),
+        ],
       ),
+    );
+  }
+
+  Widget _buildSettingsGroup({required List<Widget> children}) {
+    return Card(
+      elevation: 0,
+      color: Colors.white,
+      child: Column(
+        children: children,
+      ),
+    );
+  }
+
+  Widget _buildTabBarSettingsItem() {
+    return const ListTile(
+      leading: Icon(Icons.widgets),
+      title: Text("Tab Bar"),
+      trailing: Icon(Icons.keyboard_arrow_right),
+    );
+  }
+
+  Widget _buildAppearanceSettingsItem() {
+    return const ListTile(
+      leading: Icon(Icons.color_lens),
+      title: Text("Appearance"),
+      trailing: Icon(Icons.keyboard_arrow_right),
+    );
+  }
+
+  Widget _buildDateAndTimeSettingsItem() {
+    return const ListTile(
+      leading: Icon(Icons.access_time_filled),
+      title: Text("Date & Time"),
+      trailing: Icon(Icons.keyboard_arrow_right),
+    );
+  }
+
+  Widget _buildSoundsAndNotificationsSettingsItem() {
+    return const ListTile(
+      leading: Icon(Icons.music_note),
+      title: Text("Sounds & Notifications"),
+      trailing: Icon(Icons.keyboard_arrow_right),
+    );
+  }
+
+  Widget _buildWidgetsSettingsItem() {
+    return const ListTile(
+      leading: Icon(Icons.dashboard),
+      title: Text("Widgets"),
+      trailing: Icon(Icons.keyboard_arrow_right),
+    );
+  }
+
+  Widget _buildGeneralSettingsItem() {
+    return const ListTile(
+      leading: Icon(Icons.toc),
+      title: Text("General"),
+      trailing: Icon(Icons.keyboard_arrow_right),
+    );
+  }
+
+  Widget _buildHelpAndFeedbackSettingsItem() {
+    return const ListTile(
+      leading: Icon(Icons.help),
+      title: Text("Help & Feedback"),
+      trailing: Icon(Icons.keyboard_arrow_right),
+    );
+  }
+
+  Widget _buildAboutSettingsItem() {
+    return const ListTile(
+      leading: Icon(Icons.info),
+      title: Text("About"),
+      trailing: Icon(Icons.keyboard_arrow_right),
     );
   }
 }
