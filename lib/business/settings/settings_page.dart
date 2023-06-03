@@ -105,10 +105,13 @@ class SettingsPage extends GetView<SettingsController> {
   }
 
   Widget _buildAboutSettingsItem() {
-    return const ListTile(
-      leading: Icon(Icons.info),
-      title: Text("About"),
-      trailing: Icon(Icons.keyboard_arrow_right),
+    return ListTile(
+      leading: const Icon(Icons.info),
+      title: const Text("About"),
+      trailing: const Icon(Icons.keyboard_arrow_right),
+      onTap: () {
+        Get.dialog(const AboutDialog());
+      },
     );
   }
 }
