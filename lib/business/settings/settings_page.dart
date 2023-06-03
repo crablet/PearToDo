@@ -11,30 +11,48 @@ class SettingsPage extends GetView<SettingsController> {
       appBar: AppBar(
         title: const Text("Settings"),
       ),
-      body: Column(
+      body: _buildMainArea(),
+    );
+  }
+
+  Widget _buildMainArea() {
+    return SingleChildScrollView(
+      child: Column(
         children: [
-          _buildSettingsGroup(
-            children: [
-              _buildTabBarSettingsItem(),
-            ],
-          ),
-          _buildSettingsGroup(
-            children: [
-              _buildAppearanceSettingsItem(),
-              _buildDateAndTimeSettingsItem(),
-              _buildSoundsAndNotificationsSettingsItem(),
-              _buildWidgetsSettingsItem(),
-              _buildGeneralSettingsItem(),
-            ],
-          ),
-          _buildSettingsGroup(
-            children: [
-              _buildHelpAndFeedbackSettingsItem(),
-              _buildAboutSettingsItem(),
-            ],
-          ),
+          _buildTabBarSettingsGroup(),
+          _buildUiSettingsGroup(),
+          _buildContactSettingsGroup()
         ],
       ),
+    );
+  }
+
+  Widget _buildTabBarSettingsGroup() {
+    return _buildSettingsGroup(
+      children: [
+        _buildTabBarSettingsItem(),
+      ],
+    );
+  }
+
+  Widget _buildUiSettingsGroup() {
+    return _buildSettingsGroup(
+      children: [
+        _buildAppearanceSettingsItem(),
+        _buildDateAndTimeSettingsItem(),
+        _buildSoundsAndNotificationsSettingsItem(),
+        _buildWidgetsSettingsItem(),
+        _buildGeneralSettingsItem(),
+      ],
+    );
+  }
+
+  Widget _buildContactSettingsGroup() {
+    return _buildSettingsGroup(
+      children: [
+        _buildHelpAndFeedbackSettingsItem(),
+        _buildAboutSettingsItem(),
+      ],
     );
   }
 
