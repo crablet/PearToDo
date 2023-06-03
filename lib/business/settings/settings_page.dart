@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pear_todo/business/i18n/settings_page.i18n.dart';
 import 'package:pear_todo/business/settings/settings_controller.dart';
 
 import 'appearance_settings/appearance_settings_page.dart';
@@ -11,7 +12,7 @@ class SettingsPage extends GetView<SettingsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Settings"),
+        title: Text("Settings".i18n),
       ),
       body: _buildMainArea(),
     );
@@ -69,35 +70,35 @@ class SettingsPage extends GetView<SettingsController> {
   }
 
   Widget _buildTabBarSettingsItem() {
-    return const ListTile(
-      leading: Icon(Icons.widgets),
-      title: Text("Tab Bar"),
-      trailing: Icon(Icons.keyboard_arrow_right),
+    return ListTile(
+      leading: const Icon(Icons.widgets),
+      title: Text("Tab Bar".i18n),
+      trailing: const Icon(Icons.keyboard_arrow_right),
     );
   }
 
   Widget _buildAppearanceSettingsItem() {
     return ListTile(
       leading: const Icon(Icons.color_lens),
-      title: const Text("Appearance"),
+      title: Text("Appearance".i18n),
       trailing: const Icon(Icons.keyboard_arrow_right),
       onTap: () => Get.to(() => const AppearanceSettingsPage()),
     );
   }
 
   Widget _buildDateAndTimeSettingsItem() {
-    return const ListTile(
-      leading: Icon(Icons.access_time_filled),
-      title: Text("Date & Time"),
-      trailing: Icon(Icons.keyboard_arrow_right),
+    return ListTile(
+      leading: const Icon(Icons.access_time_filled),
+      title: Text("Date & Time".i18n),
+      trailing: const Icon(Icons.keyboard_arrow_right),
     );
   }
 
   Widget _buildSoundsAndNotificationsSettingsItem() {
-    return const ListTile(
-      leading: Icon(Icons.music_note),
-      title: Text("Sounds & Notifications"),
-      trailing: Icon(Icons.keyboard_arrow_right),
+    return ListTile(
+      leading: const Icon(Icons.music_note),
+      title: Text("Sounds & Notifications".i18n),
+      trailing: const Icon(Icons.keyboard_arrow_right),
     );
   }
 
@@ -110,25 +111,25 @@ class SettingsPage extends GetView<SettingsController> {
   }
 
   Widget _buildGeneralSettingsItem() {
-    return const ListTile(
-      leading: Icon(Icons.toc),
-      title: Text("General"),
-      trailing: Icon(Icons.keyboard_arrow_right),
+    return ListTile(
+      leading: const Icon(Icons.toc),
+      title: Text("General".i18n),
+      trailing: const Icon(Icons.keyboard_arrow_right),
     );
   }
 
   Widget _buildHelpAndFeedbackSettingsItem() {
-    return const ListTile(
-      leading: Icon(Icons.help),
-      title: Text("Help & Feedback"),
-      trailing: Icon(Icons.keyboard_arrow_right),
+    return ListTile(
+      leading: const Icon(Icons.help),
+      title: Text("Help & Feedback".i18n),
+      trailing: const Icon(Icons.keyboard_arrow_right),
     );
   }
 
   Widget _buildAboutSettingsItem() {
     return ListTile(
       leading: const Icon(Icons.info),
-      title: const Text("About"),
+      title: Text("About".i18n),
       trailing: const Icon(Icons.keyboard_arrow_right),
       onTap: () => Get.dialog(const AboutDialog()),
     );
