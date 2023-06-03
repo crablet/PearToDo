@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pear_todo/business/settings/settings_controller.dart';
 
+import 'appearance_settings/appearance_settings_page.dart';
+
 class SettingsPage extends GetView<SettingsController> {
   const SettingsPage({super.key});
 
@@ -75,10 +77,11 @@ class SettingsPage extends GetView<SettingsController> {
   }
 
   Widget _buildAppearanceSettingsItem() {
-    return const ListTile(
-      leading: Icon(Icons.color_lens),
-      title: Text("Appearance"),
-      trailing: Icon(Icons.keyboard_arrow_right),
+    return ListTile(
+      leading: const Icon(Icons.color_lens),
+      title: const Text("Appearance"),
+      trailing: const Icon(Icons.keyboard_arrow_right),
+      onTap: () => Get.to(() => const AppearanceSettingsPage()),
     );
   }
 
@@ -127,9 +130,7 @@ class SettingsPage extends GetView<SettingsController> {
       leading: const Icon(Icons.info),
       title: const Text("About"),
       trailing: const Icon(Icons.keyboard_arrow_right),
-      onTap: () {
-        Get.dialog(const AboutDialog());
-      },
+      onTap: () => Get.dialog(const AboutDialog()),
     );
   }
 }
